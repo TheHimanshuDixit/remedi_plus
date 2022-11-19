@@ -20,6 +20,11 @@ async def root(request: Request):
     return template.TemplateResponse("index.html", {"request": request})
 
 
+@app.exception_handler(404)
+async def not_found(request: Request, exc):
+    return template.TemplateResponse("404.html", {"request": request})
+
+
 register_tortoise(
     app,
     config=constants.TORTOISE_CONF,

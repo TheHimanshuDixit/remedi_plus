@@ -1,4 +1,7 @@
 from decouple import config
+import pytz
+
+IST = pytz.timezone("Asia/Kolkata")
 
 
 TORTOISE_CONF = {
