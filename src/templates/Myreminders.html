@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Reminder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/remedi_plus/src/static/styles/Myreminders.css">
+
+</head>
+
+<body>
+
+    <div class="container" style="height: 220px;">
+
+        <div class="row height d-flex justify-content-center align-items-center">
+
+            <div class="col-md-8">
+
+                <div class="search">
+                    <i class="fa fa-search"></i>
+                    <input type="number" class="form-control" id="get" placeholder="Enter your Phone no Here ">
+                    <button class="btn" onclick="getData()">My Reminders</button>
+                </div>
+            </div>
+            <div id="retbtn">
+                <a class="ret" href="/remedi_plus/src/templates/index.html">return home</a>
+            </div>
+        </div>
+
+    </div>
+    <!-- <div class="d-flex justify-content-center">
+        <div class="spinner-border" role="status" id="loading">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <h2>My Reminders are :</h2>
+    <div class="content">
+        <table id="print">
+            <tr>
+                <th>Sr No.</th>
+                <th>Name</th>
+                <th>Office</th>
+                <th>Position</th>
+                <th>Salary</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+            </tr>
+        </table>
+    </div> -->
+
+</body>
+
+</html>
+<script>
+    //     // api url
+    //     const api_url =
+    //         "https://api.github.com/users";
+
+    //     // Defining async function
+    //     async function getapi(url) {
+
+    //         // Storing response
+    //         const response = await fetch(url);
+
+    //         // Storing data in form of JSON
+    //         var data = await response.json();
+    //         console.log(data);
+    //         if (response) {
+    //             hideloader();
+    //         }
+    //         show(data);
+    //     }
+    //     // Calling that async function
+    //     getapi(api_url);
+
+    //     // Function to hide the loader
+    //     function hideloader() {
+    //         document.getElementById('loading').style.display = 'none';
+    //     }
+    //     // Function to define innerHTML for HTML table
+    //     function show(data) {
+    //         var x = 1;
+    //         let tab =
+    //             `<tr>
+    //   <th>Sr No.</th>
+    //   <th>Name</th>
+    //   <th>Office</th>
+    //   <th>Position</th>
+    //   <th>Salary</th>
+    //   </tr>`;
+
+    //         // Loop to access all rows
+    //         for (let r of data.list) {
+    //             tab += `<tr>
+    // <td> x </td>
+    // <td>${r.name} </td>
+    // <td>${r.office}</td>
+    // <td>${r.position}</td>
+    // <td>${r.salary}</td>		
+    // </tr>`;
+    //             x++;
+    //         }
+    //         // Setting innerHTML as tab variable
+    //         document.getElementById("print").innerHTML = tab;
+    //     }
+
+    function getData() {
+        var x = document.getElementById('get').value;
+        console.log("Started getData")
+        url = "https://40a5-2401-4900-b8d-1a27-ba07-68ed-43f4-698e.in.ngrok.io/reminder/mine?phone=1234567890";
+        fetch(url).then((response) => {
+            console.log("Inside first then")
+            return response.json();
+        }).then((data) => {
+            console.log("Inside second then")
+            console.log(data);
+        })
+    }
+
+</script>

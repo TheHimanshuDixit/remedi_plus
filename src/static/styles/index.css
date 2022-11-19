@@ -1,0 +1,134 @@
+body {
+    background: url('/static/assets/hourglass-4666692.jpg') no-repeat center center/cover;
+    /* background: url('/hackin-winters/src/static/asset/hourglass-4666692.jpg') no-repeat center/cover; */
+    background-attachment: fixed;
+}
+
+.logot {
+    transition: all 0.5s ease-in-out;
+}
+
+.logot:hover {
+    transform: rotate(360deg);
+}
+
+.style {
+    opacity: 0.9;
+    height: 100px;
+    font-size: 1.4rem;
+}
+
+.style2 {
+    opacity: 0.8;
+}
+
+img {
+    height: 500px;
+}
+
+.con {
+    height: 500px;
+    width: 50%;
+    z-index: -1;
+}
+
+#cg {
+    margin: 50px;
+    margin-left: 10%;
+    opacity: 0.8;
+    margin-top: 90px;
+}
+
+.cardgroup {
+    margin-top: 10px;
+    padding: 10px;
+    width: 40vw;
+    text-align: center;
+    display: inline;
+}
+
+.c1 {
+    margin: 5vw;
+    transition: transform 0.4s;
+}
+
+.c1:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.c2 {
+    width: 30vw;
+}
+
+.c3 {
+    background-color: #212529;
+    opacity: 0.95;
+    border-radius: 30px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.2vw;
+}
+
+.c4 {
+    font-size: 2.2vw;
+}
+
+.sizel {
+    font-weight: bold;
+}
+
+.navback {
+    margin: auto 15px;
+}
+
+.navback a {
+    border-radius: 20px;
+    font-family: 'Baloo 2', cursive;
+}
+
+.navback a:hover {
+    background-color: white;
+    color: black;
+}
+
+
+#logoh {
+    height: 50px;
+    position: relative;
+    right: -1020px;
+    border-radius: 11px;
+}
+
+footer {
+    position: relative;
+    bottom: -275px;
+}
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: white;
+}
+
+.hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+#sub{
+    width: 170px;   
+    font-family: 'Baloo 2', cursive;
+}
