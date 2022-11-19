@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "remedi-plus"
+version = "0.1.0"
+description = ""
+authors = ["deadaf <gahlyanrohit18@gmail.com>"]
+readme = "README.md"
+packages = [{include = "remedi_plus"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+tortoise-orm = "^0.19.2"
+asyncpg = "^0.27.0"
+fastapi = "^0.87.0"
+Jinja2 = "^3.1.2"
+python-decouple = "^3.6"
+uvicorn = "^0.19.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
