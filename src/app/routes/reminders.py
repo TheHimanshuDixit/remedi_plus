@@ -45,16 +45,24 @@ async def fake_reminders(request: Request):
 
 
 @router.get("/create")
-async def rem_create(request: Request):
+async def rem_create(request: Request, time: str):
     ...
     parsed = dateparser.parse(
-        "some_time",
+        time,
         settings={
             "RELATIVE_BASE": datetime.now(tz=IST),
             "TIMEZONE": "Asia/Kolkata",
             "RETURN_AS_TIMEZONE_AWARE": True,
         },
     )
+
+    if not parsed:
+        return {"message": "Invalid time"}
+
+    while not parsed > datetime.now(IST):
+        parsed += timedelta(days=1)
+
+    return {"parsed_time": parsed.strftime("%d %b %Y %H:%M:%S %Z")}
 
 
 @router.get("/mine")
