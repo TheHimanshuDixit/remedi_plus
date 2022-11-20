@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Reminder</title>
+</head>
+
+<body>
+    <!-- Here a loader is created which
+			loads till response comes -->
+    <div class="d-flex justify-content-center">
+        <div class="spinner-border" role="status" id="loading">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <h1>Registered Employees</h1>
+    <!-- table for showing data -->
+    <form>
+        <div id="employees"></div>
+        <input type="submit">
+    </form>
+</body>
+
+</html>
+
+<script>
+    // // api url
+    // const api_url =
+    //     "https://0db1-47-31-136-246.in.ngrok.io/reminder/mine?phone=1234567890";
+
+    // // Defining async function
+    // async function getapi(url) {
+
+    //     // Storing response
+    //     const response = await fetch(url);
+
+    //     // Storing data in form of JSON
+    //     var data = await response.json();
+    //     console.log(data);
+    //     if (response) {
+    //         hideloader();
+    //     }
+    //     show(data);
+    // }
+    // getapi(api_url);
+
+    // function hideloader() {
+    //     document.getElementById('loading').style.display = 'none';
+    // }
+    const data = [
+        {
+            dosage: "1 tablet",
+            created: "19 Nov 2022 15:28",
+            name: "paracetamol",
+            phone: 1234567890,
+            expires: "19 Nov 2022 15:29",
+            id: 1
+        }
+    ];
+    console.log(data);
+
+    function show(data) {
+        var htmlString = ``;
+        var k=1;
+        for (var key in data) {
+            htmlString += `<input type="checkbox" ` + `name = ` + data[key]['id'] + ` value = ` + data[key]['id'] +` >`+k;
+            k++;
+            htmlString += "<ul>";
+            for (var item in data[key]) {
+                htmlString += "<li>" + item + " = " + data[key][item] + "</li>";
+            }
+            htmlString += "</ul>";
+        }
+
+        document.getElementById("employees").innerHTML = htmlString;
+        
+    }
+    show(data);
+</script>

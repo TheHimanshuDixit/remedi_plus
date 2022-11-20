@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Kanit:wght@600&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sono:wght@500&display=swap" rel="stylesheet">
+    <title>About</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            background: url('/src/static/assets/hourglass-4666692.jpg') no-repeat center center/cover;
+            background-attachment: fixed;
+        }
+
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        .column {
+            float: left;
+            width: 33.3%;
+            margin-bottom: 16px;
+            padding: 0 8px;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            margin: 8px;
+            border: 2px solid #28292b;
+            border-radius: 20px;
+        }
+
+        .about-section {
+            padding: 30px;
+            padding-bottom: 30px;
+            text-align: center;
+            background-color: #212529;
+            color: white;
+            opacity: 0.85;
+        }
+
+        .container {
+            padding: 0 16px;
+            text-align: center;
+        }
+
+        .container::after,
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .title {
+            color: rgb(0, 0, 0);
+        }
+
+        @media screen and (max-width: 650px) {
+            .column {
+                width: 100%;
+                display: block;
+            }
+        }
+
+
+        .r {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .ret {
+            display: block;
+            text-decoration: none;
+            border: 2px solid black;
+            color: black;
+            font-weight: bolder;
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-transform: uppercase;
+            box-shadow: 4px 4px 13px black;
+            text-align: center;
+            width: 175px;
+            margin: auto;
+
+        }
+
+        .ret:hover {
+            background: black;
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="about-section">
+        <h1 style="font-size: 5rem; margin-bottom: 30px;margin-top: 2px;">About Us </h1>
+        <p style="font-size:1.5rem ;">Don't worry we'll remind you </p>
+        <p>Web based application to remind you through whatsapp notification</p>
+        <p>Get notified each time you forget to take your medicine </p>
+    </div>
+
+    <h1 style="text-align:center">Our Team</h1>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <h2>Rohit Kumar</h2>
+                    <p class="title">Teamlead</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <h2>Himanshu Dixit</h2>
+                    <p class="title">Member</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <h2>Ajit Kumar</h2>
+                    <p class="title">Member</p>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <h2>Aashutosh Pradhan</h2>
+                    <p class="title">Member</p>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <h2>Aman Upadhyay</h2>
+                    <p class="title">Member</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="r">
+        <a class="ret" href="/src/templates/index.html">return home</a>
+    </div>
+</body>
+
+</html>

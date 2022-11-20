@@ -1,0 +1,72 @@
+body {
+  background-color: #adb5bd;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  background: url('/src/static/assets/hourglass-4666692.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgb(7, 7, 7);
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical
+}
+
+
+input[type=submit] {
+  background-color: gray;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+
+input[type=submit]:hover {
+  background-color: black;
+}
+
+
+.container {
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  padding: 40px;
+  margin-top: 20px;
+
+}
+
+
+.lb {
+  display: block;
+}
+
+.ret {
+  margin-right: 0px;
+  display: inline-flex;
+  text-decoration: none;
+  border: 2px solid black;
+  color: black;
+  font-weight: 500;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  align-items: center;
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  box-shadow: 4px 4px 13px black;
+}
+
+.ret:hover {
+  background: black;
+  color: white;
+}

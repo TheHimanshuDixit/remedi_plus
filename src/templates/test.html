@@ -2,33 +2,71 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>testing api fetchdata</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
 </head>
 
 <body>
-
-    <button id="fetchdata" onclick="send()">Get Details</button>
-    <div id="result"></div>
+    <!-- Here a loader is created which
+			loads till response comes -->
+    <div class="d-flex justify-content-center">
+        <div class="spinner-border" role="status" id="loading">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <h1>Registered Employees</h1>
+    <!-- table for showing data -->
+    <div id="employees"></div>
 </body>
 
 </html>
+
 <script>
-    // function send() {
-    //     // var myVar = { "id": 1 };
-    //     console.log("tuleb siia");
-    //     fetch("https://docs.github.com/rest", {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "text/plain"
-    //         },
-    //         body: JSON.stringify(data)
-    //     }).then(function (response) {
-    //         return response.text();
-    //     }).then(function (muutuja) {
-    //         document.getElementById('result').innerHTML = muutuja;
-    //     });
-    // }
+    // api url
+    const api_url =
+        "https://1e3c-2401-4900-b82-c170-b3d1-cc20-77fb-24e9.in.ngrok.io/reminder/mine?phone=1234567890";
+
+    // Defining async function
+    async function getapi(url) {
+
+        // Storing response
+        const response = await fetch(url);
+
+        // Storing data in form of JSON
+        var data = await response.json();
+        console.log(data);
+        if (response) {
+            hideloader();
+        }
+        show(data);
+    }
+    getapi(api_url);
+
+    function hideloader() {
+        document.getElementById('loading').style.display = 'none';
+    }
+    function show(data) {
+        // let tab = ``;
+        // for (const [index, element] of data.entries()) {
+        //     {
+        //         tab += `
+        //     <p>${element}</p>`;
+        //     }
+        //     document.getElementById("employees").innerHTML = tab;
+        // }
+        var htmlString = "";
+        for (var key in data) {
+            htmlString += "<span>" + key + "</span>";
+            htmlString += "<ul>";
+            for (var item in data[key]) {
+                htmlString += "<li>" + item + " = " + data[key][item] + "</li>";
+            }
+            htmlString += "</ul>";
+        }
+
+        document.getElementById("employees").innerHTML = htmlString;
+    }
 </script>
