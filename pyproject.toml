@@ -20,6 +20,7 @@ isort = "^5.10.1"
 fastapi-utils = "^0.2.1"
 heyoo = "^0.0.6"
 requests-toolbelt = "^0.10.1"
+python-multipart = "^0.0.5"
 
 
 [build-system]

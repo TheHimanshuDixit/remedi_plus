@@ -44,9 +44,7 @@ async def fake_reminders(request: Request):
     return {"message": "done"}
 
 
-@router.get("/create")
-async def rem_create(request: Request, time: str):
-    ...
+def parse_time(time: str):
     parsed = dateparser.parse(
         time,
         settings={
@@ -62,7 +60,23 @@ async def rem_create(request: Request, time: str):
     while not parsed > datetime.now(IST):
         parsed += timedelta(days=1)
 
-    return {"parsed_time": parsed.strftime("%d %b %Y %H:%M:%S %Z")}
+    return parsed
+
+
+@router.post("/create")
+async def rem_create(request: Request):
+    form = await request.form()
+
+    _range = int(form.get("time_slot"))
+    for i in range(0, _range):
+        await Timer.create(
+            name=form.get("medname"),
+            dosage=form.get("Dosage") + " " + form.get("dosetype"),
+            phone=form.get("mobno"),
+            expires=parse_time(form.get("time_slot{0}".format(i))),
+        )
+
+    return {"message": "Created {} timers for you.".format(_range)}
 
 
 @router.get("/mine")
@@ -76,7 +90,8 @@ async def rem_mine(request: Request, phone: int):
     return _list
 
 
-@router.get("/delete")
-async def rem_delete(request: Request, id: int):
-    await Timer.filter(pk=id).delete()
-    return {"status": "ok"}
+@router.post("/delete")
+async def rem_delete(request: Request):
+    form = await request.form()
+    await Timer.filter(id__in=form.keys()).delete()
+    return {"message": "Deleted {} timers for you.".format(len(form.keys()))}

@@ -13,7 +13,7 @@ from fastapi_utils.tasks import repeat_every
 from models import Timer
 from fastapi.middleware.cors import CORSMiddleware
 
-from datetime import datetime, timedelta
+from datetime import datetime
 
 app = FastAPI()
 
@@ -41,6 +41,37 @@ app.add_middleware(
 @app.get("/")
 async def root(request: Request):
     return template.TemplateResponse("index.html", {"request": request})
+
+
+@app.get("/about")
+async def about(request: Request):
+    print("new request")
+    return template.TemplateResponse("About.html", {"request": request})
+
+
+@app.get("/contact")
+async def contact(request: Request):
+    return template.TemplateResponse("Contactus.html", {"request": request})
+
+
+@app.get("/search")
+async def contact(request: Request):
+    return template.TemplateResponse("Search.html", {"request": request})
+
+
+@app.get("/addreminder")
+async def add_reminder(request: Request):
+    return template.TemplateResponse("Addreminder.html", {"request": request})
+
+
+@app.get("/delreminder")
+async def del_reminder(request: Request):
+    return template.TemplateResponse("Delreminder.html", {"request": request})
+
+
+@app.get("/myreminders")
+async def my_reminders(request: Request):
+    return template.TemplateResponse("Myreminders.html", {"request": request})
 
 
 @app.on_event("startup")

@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <title>404 Error Page</title>
-      <!-- <link rel="stylesheet" href="/hackin-winters/src/static/styles/error.css"> -->
-      <link rel="stylesheet" href="/src/static/styles/error.css">
-   </head>
-   <body>
-      <div id="error-page">
-         <div class="content">
-            <h2 class="header" style="opacity: 0.8;">
-               404
-            </h2>
-            <h4 data-text="Opps! Page not found">
-               Opps! Page not found
-            </h4>
-            <p>
-               Sorry, the page you're looking for doesn't exist. If you think something is broken, report a problem.
-            </p>
-            <div class="btns">
-               <a href="/src/templates/index.html">return home</a>
-               
-            </div>
-         </div>
+  <head>
+    <meta charset="utf-8" />
+    <title>404 Error Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', path = '/styles/Error.css')}}" />
+    <!-- <link rel="stylesheet" href="/src/static/styles/Error.css"> -->
+  </head>
+  <body>
+    <div id="error-page">
+      <div class="content">
+        <h2 class="header" style="opacity: 0.8">404</h2>
+        <h4 data-text="Opps! Page not found">Opps! Page not found</h4>
+        <p>Sorry, the page you're looking for doesn't exist. If you think something is broken, report a problem.</p>
+        <div class="btns">
+          <a href="/src/templates/index.html">return home</a>
+        </div>
       </div>
-   </body>
+    </div>
+  </body>
 </html>
