@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>remedi+</title>
-    <link rel="stylesheet" href="{{ url_for('static', path = '/styles/index.css')}}" />
-    <!-- <link rel="stylesheet" href="/src/static/styles/index.css"> -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', path = '/styles/index.css')}}" /> -->
+    <link rel="stylesheet" href="/src/static/styles/index.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Roboto+Slab&family=Syne+Mono&display=swap"
       rel="stylesheet"
@@ -26,7 +26,7 @@
     ></script>
   </head>
 
-  <body>
+  <body style="background-color: #222831;">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark style">
       <div class="container-fluid style">
         <a class="navbar-brand logot" style="font-size: 1.8rem" href="#">reMEDI+</a>
@@ -68,19 +68,19 @@
           </ul>
         </div>
       </div>
-      <div id="sub" style="opacity: 0.8">
+      <div id="sub" style="opacity: 0.8; background-color: #393e46; padding: 9px; border: 3.2px solid #eeeeee; margin-right: 2px;">
         <h5 class="hover-underline-animation">Don't Forget !!</h5>
         <h5 class="hover-underline-animation">We'll Remind !!</h5>
       </div>
     </nav>
-    <div id="cg">
+    <div id="cg" style="display: flex; margin-bottom: -40px;" >
       <div class="row cardgroup">
         <div class="col-sm-12 c1" onclick="window.location.href = '/myreminders';">
-          <div class="card c2" style="box-shadow: 8px 10px 50px white, 8px 8px black; border-radius: 30px">
+          <div class="card c2" style="box-shadow: 8px 10px 20px white, 8px 8px black; border-radius: 30px">
             <div class="card-body c3" style="color: white; padding: 40px">
               <h3 class="card-title hover-underline-animation">My Reminder</h3>
               <p class="card-text" style="margin-top: 20px">
-                Here is the list of all your reminders. Just by entering your phone number you can acess your reminders
+                Here is the list of all your reminders. Just by entering your phone number you can access your reminders
                 list.
               </p>
             </div>
@@ -89,20 +89,22 @@
       </div>
       <div class="row cardgroup">
         <div class="col-sm-12 c1" onclick="window.location.href = '/addreminder';">
-          <div class="card c2" style="box-shadow: 8px 10px 50px white, 8px 8px black; border-radius: 30px">
+          <div class="card c2" style="box-shadow: 8px 10px 20px white, 8px 8px black; border-radius: 30px">
             <div class="card-body c3" style="color: white; padding: 40px">
               <h3 class="card-title hover-underline-animation">Add Reminder</h3>
               <p class="card-text" style="margin-top: 20px">
-                Adding your reminder sounds like a difficult job. it's not, just adding your medicine name along with the
+              Just adding your medicine name along with the
                 dosage and the time slots would be enough for us to remind you on time.
               </p>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <div id="cg" style="display: flex; margin-top: 10px;">
       <div class="row cardgroup">
         <div class="col-sm-12 c1" onclick="window.location.href = '/delreminder';">
-          <div class="card c2" style="box-shadow: 8px 10px 50px white, 8px 8px black; border-radius: 30px">
+          <div class="card c2" style="box-shadow: 8px 10px 20px white, 8px 8px black; border-radius: 30px">
             <div class="card-body c3" style="color: white; padding: 40px">
               <h3 class="card-title hover-underline-animation">Delete Reminder</h3>
               <p class="card-text" style="margin-top: 20px">
@@ -115,11 +117,10 @@
       </div>
       <div class="row cardgroup">
         <div class="col-sm-12 c1" onclick="window.location.href = '/search';">
-          <div class="card c2" style="box-shadow: 8px 10px 50px white, 8px 8px black; border-radius: 30px">
+          <div class="card c2" style="box-shadow: 8px 10px 20px white, 8px 8px black; border-radius: 30px">
             <div class="card-body c3" style="color: white; padding: 40px">
               <h3 class="card-title hover-underline-animation">Search Medicine</h3>
-              <p class="card-text" style="margin-top: 20px">
-                Are you afraid of taking medicines you don't know about.Well now with the help of
+              <p class="card-text" style="margin-top: 20px">Now with the help of
                 <strong>reMEDI+</strong> it's very convenient to search for any medicine and also you can easily get all
                 the information about your medicine.
               </p>
@@ -129,7 +130,7 @@
       </div>
     </div>
 
-    <footer class="bg-dark text-center text-lg-start style2">
+    <footer class="text-center text-lg-start style2" >
       <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); color: white">
         © 2020 Copyright:
         <a class="text-light" href="">reMEDI+.com</a>
