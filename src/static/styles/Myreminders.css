@@ -10,7 +10,7 @@ body {
 }
 
 .height {
-    height: 60vh;
+    height: 500px;
 }
 
 
@@ -33,8 +33,6 @@ body {
 
     box-shadow: none;
     border: 2px solid black;
-
-
 }
 
 .search .fa-search {
@@ -66,8 +64,6 @@ body {
 }
 
 
-
-
 .ret {
     margin-right: 0px;
     display: inline-flex;
@@ -97,9 +93,16 @@ body {
     background-color: #f2f2f2;
     padding: 3vw;
     opacity: 0.5;
-    width: 60%;
+    width: 57%;
     margin: auto;
     margin-top: 20px;
+    font-family: "Poppins", sans-serif;
+}
+
+#print {
+    font-family: "Poppins", sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
 }
 
 h2 {
@@ -124,4 +127,8 @@ th:hover {
 
 td:hover {
     opacity: 0.5;
+}
+
+#print span{
+    font-weight: bolder;
 }

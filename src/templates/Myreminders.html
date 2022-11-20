@@ -10,6 +10,48 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/src/static/styles/Myreminders.css">
 
+    <script>
+        function getData() {
+            // api url
+            var number = document.getElementById('get').value;
+            console.log(number);
+            const api_url = "https://1142-2401-4900-b94-f5ca-d793-3793-6093-c0a8.in.ngrok.io/reminder/mine?phone=" + number;
+
+            // Defining async function
+            async function getapi(url) {
+
+                const response = await fetch(url);
+
+                var data = await response.json();
+                console.log(data);
+                if (response) {
+                    hideloader();
+                }
+                show(data);
+            }
+            getapi(api_url);
+
+            function hideloader() {
+                document.getElementById('loading').style.display = 'none';
+            }
+            function show(data) {
+
+                var htmlString = "";
+                var x = 0;
+                for (var key in data) {
+                    x++;
+                    htmlString += "<span>" + x + "</span>";
+                    htmlString += "<ul>";
+                    for (var item in data[key]) {
+                        htmlString += "<li>" + item + " = " + data[key][item] + "</li>";
+                    }
+                    htmlString += "</ul>";
+                }
+                document.getElementById("print").innerHTML = htmlString;
+            }
+        }
+    </script>
+
 </head>
 
 <body>
@@ -32,105 +74,16 @@
         </div>
 
     </div>
-    <!-- <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center">
         <div class="spinner-border" role="status" id="loading">
-            <span class="sr-only">Loading...</span>
         </div>
     </div>
-    <h2>My Reminders are :</h2>
+    <h2>My Reminders :</h2>
     <div class="content">
-        <table id="print">
-            <tr>
-                <th>Sr No.</th>
-                <th>Name</th>
-                <th>Office</th>
-                <th>Position</th>
-                <th>Salary</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>5</td>
-                <td>6</td>
-                <td>7</td>
-                <td>8</td>
-            </tr>
-        </table>
-    </div> -->
+        <div id="print">
+        </div>
+    </div>
 
 </body>
 
 </html>
-<script>
-    //     // api url
-    //     const api_url =
-    //         "https://api.github.com/users";
-
-    //     // Defining async function
-    //     async function getapi(url) {
-
-    //         // Storing response
-    //         const response = await fetch(url);
-
-    //         // Storing data in form of JSON
-    //         var data = await response.json();
-    //         console.log(data);
-    //         if (response) {
-    //             hideloader();
-    //         }
-    //         show(data);
-    //     }
-    //     // Calling that async function
-    //     getapi(api_url);
-
-    //     // Function to hide the loader
-    //     function hideloader() {
-    //         document.getElementById('loading').style.display = 'none';
-    //     }
-    //     // Function to define innerHTML for HTML table
-    //     function show(data) {
-    //         var x = 1;
-    //         let tab =
-    //             `<tr>
-    //   <th>Sr No.</th>
-    //   <th>Name</th>
-    //   <th>Office</th>
-    //   <th>Position</th>
-    //   <th>Salary</th>
-    //   </tr>`;
-
-    //         // Loop to access all rows
-    //         for (let r of data.list) {
-    //             tab += `<tr>
-    // <td> x </td>
-    // <td>${r.name} </td>
-    // <td>${r.office}</td>
-    // <td>${r.position}</td>
-    // <td>${r.salary}</td>		
-    // </tr>`;
-    //             x++;
-    //         }
-    //         // Setting innerHTML as tab variable
-    //         document.getElementById("print").innerHTML = tab;
-    //     }
-
-    function getData() {
-        var x = document.getElementById('get').value;
-        console.log("Started getData")
-        url = "https://40a5-2401-4900-b8d-1a27-ba07-68ed-43f4-698e.in.ngrok.io/reminder/mine?phone=1234567890";
-        fetch(url).then((response) => {
-            console.log("Inside first then")
-            return response.json();
-        }).then((data) => {
-            console.log("Inside second then")
-            console.log(data);
-        })
-    }
-
-</script>
