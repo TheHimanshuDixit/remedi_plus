@@ -33,8 +33,13 @@
     }
 
     #filldetails {
-      background-color: black;
+      /* background-color: black; */
+      border: 2px solid black;
       padding: 8px;
+      text-decoration: none;
+      color: black;
+      border-radius: 5px;
+      /* height: 100px; */
     }
 
   </style>
@@ -78,7 +83,7 @@
 
       <label for="dosage">Enter Time slots</label><br>
       <input style="width: 90%;" type="text" id="time_slot" name="time_slot" value="1">
-      <a href="#" id="filldetails" onclick="addFields()">Fill Details</a>
+      <a href="#" id="filldetails"  onclick="addFields()">Fill Details</a>
       <p style="margin-bottom:20px">Number of members: (max. 10)</p>
       <div id="container"></div>
       <input type="submit" value="Submit" />
