@@ -7,7 +7,7 @@
         background-color:#adb5bd;
         font-family: "Poppins", sans-serif;
         font-weight: 300;
-        background: url('/src/static/asset/hourglass-4666692.jpg') no-repeat center center/cover ;
+        background: url('/src/static/assets/hourglass-4666692.jpg') no-repeat center center/cover ;
  background-attachment: fixed;
        }
 
@@ -68,12 +68,12 @@
 
 
 
-       .ret{
+       .ret {
         margin-right: 0px;
         display: inline-flex;
         text-decoration: none;
         border: 2px solid black;
-        color:black;
+        color: black;
         font-weight: 500;
         padding: 10px 25px;
         border-radius: 25px;
@@ -81,13 +81,13 @@
         transition: all 0.3s ease;
         align-items: center;
         position: absolute;
-        top: 25px;
-        right: 30px;
-        box-shadow: 4px 4px 13px  black;
-       }
-
-      .ret:hover{
+        top: 10px;
+        right: 10px;
+        box-shadow: 4px 4px 13px black;
+    }
+    
+    .ret:hover {
         background: black;
         color: white;
         text-decoration: underline;
-      }
+    } 
