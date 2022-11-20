@@ -11,8 +11,8 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="/src/static/styles/Delreminder.css">
-    <!-- <link rel="stylesheet" href="{{ url_for('static', path = '/styles/Delreminder.css')}}" /> -->
+    <!-- <link rel="stylesheet" href="/src/static/styles/Delreminder.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', path = '/styles/Delreminder.css')}}" />
 
     <script>
       funct;
@@ -57,14 +57,14 @@
     </script>
   </head>
 
-  <body>
+  <body style="background-color: #222831;">
     <div class="container" style="height: 220px">
       <div class="row height d-flex justify-content-center align-items-center">
         <div class="col-md-8">
           <div class="search">
             <i class="fa fa-search"></i>
             <input type="number" class="form-control" id="get" placeholder="Enter your Phone no Here " />
-            <button class="btn" onclick="getData()">My Reminders</button>
+            <button class="btn" onclick="getData()">Search</button>
           </div>
         </div>
         <div id="retbtn">

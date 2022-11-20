@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Set Reminder</title>
-  <!-- <link rel="stylesheet" href="{{ url_for('static', path = '/styles/Addreminder.css')}}" /> -->
-  <link rel="stylesheet" href="/src/static/styles/Addreminder.css">
+  <link rel="stylesheet" href="{{ url_for('static', path = '/styles/Addreminder.css')}}" />
+  <!-- <link rel="stylesheet" href="/src/static/styles/Addreminder.css"> -->
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
@@ -95,10 +95,10 @@
         placeholder="For how many days you want to keep this schedule ?" />
 
       <div class="checkboxes">Enter Notification type :
-        <label class="lb"><input type="checkbox">Whatsapp</label>
-        <label class="lb"><input type="checkbox">SMS</label>
-        <label class="lb"><input type="checkbox">Browser</label>
-        <label class="lb"><input type="checkbox">Call</label>
+        <label class="lb"><input type="checkbox" name="chk1" value="chk1">Whatsapp</label>
+        <label class="lb"><input type="checkbox" name="chk2" value="chk2">SMS</label>
+        <label class="lb"><input type="checkbox" name="chk3" value="chk3">Browser</label>
+        <label class="lb"><input type="checkbox" name="chk4" value="chk4">Call</label>
       </div>
 
       <label for="dosage">Enter Time slots :</label><br />
