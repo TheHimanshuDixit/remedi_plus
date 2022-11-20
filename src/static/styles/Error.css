@@ -9,8 +9,7 @@
     height: 100vh;
     background: gray;
     background-size: 400%;
-    background: url('/src/static/assets/hourglass-4666692.jpg') no-repeat center center/cover ;
-    background-attachment: fixed;
+
   }
   #error-page{
     position: absolute;
@@ -24,6 +23,7 @@
   #error-page .content{
     max-width: 600px;
     text-align: center;
+    
   }
   .content h2.header{
     font-size: 18vw;

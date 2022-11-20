@@ -2,8 +2,8 @@ body {
   background-color: #adb5bd;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
-  background: url('/src/static/assets/hourglass-4666692.jpg') no-repeat center center/cover;
-  background-attachment: fixed;
+  /* background: url('/src/static/assets/hourglass-4666692.jpg') no-repeat center center/cover;
+  background-attachment: fixed; */
 }
 
 input,
@@ -52,8 +52,8 @@ label,.checkboxes {
   margin-right: 0px;
   display: inline-flex;
   text-decoration: none;
-  border: 2px solid black;
-  color: black;
+  border: 2px solid white;
+  color: white;
   font-weight: 500;
   padding: 10px 25px;
   border-radius: 25px;
@@ -67,7 +67,7 @@ label,.checkboxes {
 }
 
 .ret:hover {
-  background: black;
+  background: #222831;
   color: white;
   text-decoration: underline;
 }
