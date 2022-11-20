@@ -1,81 +1,134 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
 
-body{
- background-color:#adb5bd;
- font-family: "Poppins", sans-serif;
- font-weight: 300;
- background: url('/src/static/assets/hourglass-4666692.jpg') no-repeat center center/cover ;
- background-attachment: fixed;
+
+body {
+    background-color: #adb5bd;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    background: url('/src/static/assets/hourglass-4666692.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
 }
 
-.height{
- height: 60vh;
+.height {
+    height: 500px;
 }
 
-.search{
-position: relative;
-}
 
-.search input{
- height: 60px;
- text-indent: 25px;
- border: 2px solid #d6d4d4;
- box-shadow: 8px 6px 5px black;
- opacity: 0.6; 
-}
-
-.search input:focus{
- box-shadow: none;
- border: 2px solid black;
-
+.search {
+    position: relative;
 
 }
 
-.search .fa-search{
- position: absolute;
- top: 20px;
- left: 16px;
+.search input {
+
+    height: 60px;
+    text-indent: 25px;
+    border: 2px solid #d6d4d4;
+    box-shadow: 8px 6px 5px black;
+    opacity: 0.6;
 
 }
 
-.search button{
- position: absolute;
- background: rgb(172, 168, 168);
- top: 5px;
- right: 5px;
- height: 50px;
- width: 150px;
- border: 2px solid rgba(56, 54, 54, 0.432);
- font-family: Verdana, Geneva, Tahoma, sans-serif;
- /* background: #4e5358; */
+.search input:focus {
 
-}
-.search button:hover{
- color: black;
- background-color: rgb(129, 125, 125);
- border: 2px solid black;
+    box-shadow: none;
+    border: 2px solid black;
 }
 
- .ret{
- margin-right: 0px;
- display: inline-flex;
- text-decoration: none;
- border: 2px solid black;
- color:black;
- font-weight: 500;
- padding: 10px 25px;
- border-radius: 25px;
- text-transform: uppercase;
- transition: all 0.3s ease;
- align-items: center;
- position: absolute;
- top: 10px;
- right: 10px;
- box-shadow: 4px 4px 13px  black;
+.search .fa-search {
+
+    position: absolute;
+    top: 20px;
+    left: 16px;
+
 }
 
- .ret:hover{
-  background: black; 
-  color: white; 
-  text-decoration: underline;
-} 
+.search button {
+
+    position: absolute;
+    background: rgb(172, 168, 168);
+    top: 5px;
+    right: 5px;
+    height: 50px;
+    width: 150px;
+    border: 2px solid rgba(56, 54, 54, 0.432);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* background: #4e5358; */
+
+}
+
+.search button:hover {
+    color: black;
+    background-color: rgb(129, 125, 125);
+    border: 2px solid black;
+}
+
+
+.ret {
+    margin-right: 0px;
+    display: inline-flex;
+    text-decoration: none;
+    border: 2px solid black;
+    color: black;
+    font-weight: 500;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    box-shadow: 4px 4px 13px black;
+}
+
+.ret:hover {
+    background: black;
+    color: white;
+    text-decoration: underline;
+}
+
+.content {
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    padding: 3vw;
+    opacity: 0.5;
+    width: 57%;
+    margin: auto;
+    margin-top: 20px;
+    font-family: "Poppins", sans-serif;
+}
+
+#print {
+    font-family: "Poppins", sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+h2 {
+    text-align: center;
+    font-size: 3vw;
+}
+
+table,
+th,
+td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+    margin: auto;
+    font-size: 1.8vw;
+}
+
+th:hover {
+    background-color: rgb(97, 95, 95);
+    color: white;
+}
+
+td:hover {
+    opacity: 0.5;
+}
+
+#print span{
+    font-weight: bolder;
+}

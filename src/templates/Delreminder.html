@@ -1,74 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Delete Reminder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/src/static/styles/Delreminder.css">
+
+    <script>
+        funct
+        function getData() {
+            // api url
+            var number = document.getElementById('get').value;
+            console.log(number);
+            const api_url = "https://1142-2401-4900-b94-f5ca-d793-3793-6093-c0a8.in.ngrok.io/reminder/mine?phone=" + number;
+
+            // Defining async function
+            async function getapi(url) {
+
+                const response = await fetch(url);
+
+                var data = await response.json();
+                console.log(data);
+                if (response) {
+                    hideloader();
+                }
+                show(data);
+            }
+            getapi(api_url);
+
+            function hideloader() {
+                document.getElementById('loading').style.display = 'none';
+            }
+            function show(data) {
+                var htmlString = ``;
+                var k = 1;
+                for (var key in data) {
+                    htmlString += `<input type="checkbox" ` + `name=` + data[key]['id'] + ` value=` + data[key]['id'] + `> ` + k;
+                    k++;
+                    htmlString += "<ul>";
+                    for (var item in data[key]) {
+                        htmlString += "<li>" + item + " = " + data[key][item] + "</li>";
+                    }
+                    htmlString += "</ul>";
+                }
+                htmlString += `<input type="submit" name=submit value= Delete onclick()="delete()">`;
+                document.getElementById("print").innerHTML = htmlString;
+            }
+        }
+    </script>
+
 </head>
 
 <body>
-    <!-- Here a loader is created which
-			loads till response comes -->
+
+    <div class="container" style="height: 220px;">
+
+        <div class="row height d-flex justify-content-center align-items-center">
+
+            <div class="col-md-8">
+
+                <div class="search">
+                    <i class="fa fa-search"></i>
+                    <input type="number" class="form-control" id="get" placeholder="Enter your Phone no Here ">
+                    <button class="btn" onclick="getData()">My Reminders</button>
+                </div>
+            </div>
+            <div id="retbtn">
+                <a class="ret" href="/src/templates/index.html">return home</a>
+            </div>
+        </div>
+
+    </div>
     <div class="d-flex justify-content-center">
         <div class="spinner-border" role="status" id="loading">
-            <span class="sr-only">Loading...</span>
         </div>
     </div>
-    <h1>Registered Employees</h1>
-    <!-- table for showing data -->
-    <form>
-        <div id="employees"></div>
-        <input type="submit">
+    <h2>Remove Reminders :</h2>
+    <form class="content">
+        <div id="print">
+        </div>
     </form>
+
 </body>
 
 </html>
-
-<script>
-    // // api url
-    // const api_url =
-    //     "https://0db1-47-31-136-246.in.ngrok.io/reminder/mine?phone=1234567890";
-
-    // // Defining async function
-    // async function getapi(url) {
-
-    //     // Storing response
-    //     const response = await fetch(url);
-
-    //     // Storing data in form of JSON
-    //     var data = await response.json();
-    //     console.log(data);
-    //     if (response) {
-    //         hideloader();
-    //     }
-    //     show(data);
-    // }
-    // getapi(api_url);
-
-    // function hideloader() {
-    //     document.getElementById('loading').style.display = 'none';
-    // }
-    
-    console.log(data);
-
-    function show(data) {
-        var htmlString = ``;
-        var k=1;
-        for (var key in data) {
-            htmlString += `<input type="checkbox" ` + `name = ` + data[key]['id'] + ` value = ` + data[key]['id'] +` >`+k;
-            k++;
-            htmlString += "<ul>";
-            for (var item in data[key]) {
-                htmlString += "<li>" + item + " = " + data[key][item] + "</li>";
-            }
-            htmlString += "</ul>";
-        }
-
-        document.getElementById("employees").innerHTML = htmlString;
-        
-    }
-    show(data);
-</script>
