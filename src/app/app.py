@@ -9,6 +9,11 @@ from fastapi.staticfiles import StaticFiles
 from .routes.reminders import router as reminders_router
 from .routes.medicine import router as medicine_router
 from .routes.test import router as test_router
+from fastapi_utils.tasks import repeat_every
+from models import Timer
+from fastapi.middleware.cors import CORSMiddleware
+
+from datetime import datetime, timedelta
 
 app = FastAPI()
 
@@ -20,9 +25,32 @@ app.mount("/static", StaticFiles(directory="src/static"), name="static")
 template = Jinja2Templates(directory="src/templates")
 
 
+origins = [
+    "*",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
 @app.get("/")
 async def root(request: Request):
     return template.TemplateResponse("index.html", {"request": request})
+
+
+@app.on_event("startup")
+@repeat_every(seconds=constants.SYNC_INTERVAL)
+async def dispatch_reminders():
+    records = await Timer.filter(
+        expires__lte=datetime.now(constants.IST), dispatched=False
+    )
+    for record in records:
+        await record.dispatch()
 
 
 # @app.exception_handler(404)

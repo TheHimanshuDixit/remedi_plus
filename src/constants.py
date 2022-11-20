@@ -2,7 +2,7 @@ from decouple import config
 import pytz
 
 IST = pytz.timezone("Asia/Kolkata")
-
+SYNC_INTERVAL = 5
 
 TORTOISE_CONF = {
     "connections": {

@@ -68,7 +68,12 @@ async def rem_create(request: Request, time: str):
 @router.get("/mine")
 async def rem_mine(request: Request, phone: int):
     records = await Timer.filter(phone=phone).order_by("expires").all()
-    return [dict(record) for record in records]
+    _list = [dict(record) for record in records]
+    for _ in _list:
+        _["expires"] = _["expires"].strftime("%d %b %Y %H:%M")
+        _["created_at"] = _["created_at"].strftime("%d %b %Y %H:%M")
+
+    return _list
 
 
 @router.get("/delete")
