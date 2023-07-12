@@ -6,7 +6,7 @@ A web based Application which reminds you to take medicine on time
 
 ## Tech Stack
 
-**Client:** Html, CSS, Js
+**Client:** Html, CSS, Javascript
 
 **Server:** Node, Express, Python
 
