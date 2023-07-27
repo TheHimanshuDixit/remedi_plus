@@ -1,7 +1,7 @@
 
 # remedi+
 
-A web based Application which reminds you to take medicine on time
+A Web based Application which Reminds you to take medicine on time.
 
 
 ## Tech Stack
